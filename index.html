@@ -16,6 +16,7 @@
   --kakao:#FEE500;
   --kakao-text:#391B1B;
   --blush:#E2836B;
+  --blue:#5B84A8;
   --line:rgba(42,33,25,0.13);
   --card:#FFFFFF;
 }
@@ -191,21 +192,27 @@ h2 em{font-style:normal;color:var(--blush);}
 .price-meta b{color:var(--kakao);font-weight:500;}
 
 /* ---- TESTIMONIAL ---- */
+.testimonial-list{display:flex;flex-direction:column;gap:12px;}
 .testimonial-card{
   background:var(--card);border:1px solid var(--line);border-radius:18px;
-  padding:24px 22px;position:relative;
+  padding:20px 22px;position:relative;
 }
-.testimonial-mark{font-family:'Gowun Batang',serif;font-size:32px;color:var(--kakao-text);
-  background:var(--kakao);width:40px;height:40px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;line-height:1;margin-bottom:14px;
-}
-.testimonial-quote{font-family:'Gowun Batang',serif;font-size:16px;line-height:1.85;color:var(--ink);margin-bottom:16px;}
+.testimonial-quote{font-family:'Gowun Batang',serif;font-size:16px;line-height:1.85;color:var(--ink);margin-bottom:14px;}
 .testimonial-author{display:flex;align-items:center;gap:10px;}
 .testimonial-no{
   font-family:'DM Mono',monospace;font-size:10.5px;color:var(--kakao-text);
   background:var(--kakao);padding:3px 9px;border-radius:8px;
 }
 .testimonial-meta{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--ink-faint);}
+.testimonial-gender{
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;
+}
+.testimonial-gender.f{background:rgba(226,131,109,0.15);color:var(--blush);}
+.testimonial-gender.m{background:rgba(91,132,168,0.15);color:var(--blue);}
+.testimonial-card.gf{border-color:rgba(226,131,109,0.35);}
+.testimonial-card.gm{border-color:rgba(91,132,168,0.35);}
 
 /* ---- FAQ ---- */
 .faq-item{border-bottom:1px solid var(--line);padding:18px 2px;}
@@ -452,30 +459,41 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;}
     <div class="eyebrow reveal">실제 후기</div>
     <h2 class="reveal">먼저 시작한 분들의<br>이야기</h2>
 
-    <div class="testimonial-card reveal">
-      <div class="testimonial-mark">"</div>
-      <div class="testimonial-quote">사람은 외로우니까.. 이거 마치 접속 같은 느낌도 들구.. 그런데 이거 좀 기대되는데요? 저 신기하게 약간 설렘이 오고있어요!!</div>
-      <div class="testimonial-author">
-        <span class="testimonial-no">101호</span>
-        <span class="testimonial-meta">율링 · 꾸밋 시즌1</span>
+    <div class="testimonial-list">
+      <div class="testimonial-card gf reveal">
+        <div class="testimonial-quote">사람은 외로우니까.. 이거 마치 접속 같은 느낌도 들구.. 그런데 이거 좀 기대되는데요? 저 신기하게 약간 설렘이 오고있어요!!</div>
+        <div class="testimonial-author">
+          <span class="testimonial-gender f">♀</span>
+          <span class="testimonial-no">101호</span>
+          <span class="testimonial-meta">율링 · 꾸밋 시즌1</span>
+        </div>
       </div>
-    </div>
 
-    <div class="testimonial-card reveal" style="margin-top:14px;">
-      <div class="testimonial-mark">"</div>
-      <div class="testimonial-quote">모르는 사람과 채팅 해보긴 했지만 많이 안해요. 궁금한 누군가와 얘기할 기회가 계속 생겼으면 좋겠습니다. 100명 안에 내가 원하는 한 명은 있지 않을까요?</div>
-      <div class="testimonial-author">
-        <span class="testimonial-no">153호</span>
-        <span class="testimonial-meta">찬스 · 꾸밋 시즌1</span>
+      <div class="testimonial-card gm reveal">
+        <div class="testimonial-quote">모르는 사람과 채팅 해보긴 했지만 많이 안해요. 궁금한 누군가와 얘기할 기회가 계속 생겼으면 좋겠습니다. 100명 안에 내가 원하는 한 명은 있지 않을까요?</div>
+        <div class="testimonial-author">
+          <span class="testimonial-gender m">♂</span>
+          <span class="testimonial-no">153호</span>
+          <span class="testimonial-meta">찬스 · 꾸밋 시즌1</span>
+        </div>
       </div>
-    </div>
 
-    <div class="testimonial-card reveal" style="margin-top:14px;">
-      <div class="testimonial-mark">"</div>
-      <div class="testimonial-quote">재밌겠다.</div>
-      <div class="testimonial-author">
-        <span class="testimonial-no">103호</span>
-        <span class="testimonial-meta">이안 · 꾸밋 시즌1</span>
+      <div class="testimonial-card gm reveal">
+        <div class="testimonial-quote">재밌겠다. 인문학·인공지능(AI)·과학 분야도 관심많고, '요즘 읽는다' 하면서도 잘 안 돼서 서로 자극받을 수 있으면 좋겠다</div>
+        <div class="testimonial-author">
+          <span class="testimonial-gender m">♂</span>
+          <span class="testimonial-no">103호</span>
+          <span class="testimonial-meta">이안 · 꾸밋 시즌1</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card gf reveal">
+        <div class="testimonial-quote">ㅋㅋ 잼있네요 서비스 이름도 귀엽네요. AI는 맨날 대답도 비슷하고 ㅋㅋㅋㅋ 사람끼리 챗 역시 필요</div>
+        <div class="testimonial-author">
+          <span class="testimonial-gender f">♀</span>
+          <span class="testimonial-no">144호</span>
+          <span class="testimonial-meta">마사루 · 꾸밋 시즌1</span>
+        </div>
       </div>
     </div>
   </div>
