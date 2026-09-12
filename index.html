@@ -62,6 +62,13 @@ h2 em{font-style:normal;color:var(--blush);}
 .hero{padding:56px 0 48px;}
 .hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.22em;color:var(--ink-soft);margin-bottom:22px;}
 .hero-eyebrow::before{content:'●';color:var(--blush);margin-right:8px;font-size:8px;}
+.hero-axis{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink-soft);
+  margin-bottom:18px;padding:7px 16px;border:1px solid var(--line);border-radius:20px;background:var(--card);
+}
+.hero-axis b{color:var(--ink);font-weight:700;}
+.hero-axis .sep{color:var(--blush);}
 .hero h1{
   font-family:'Gowun Batang',serif;font-weight:700;
   font-size:clamp(30px,7vw,42px);
@@ -162,6 +169,18 @@ h2 em{font-style:normal;color:var(--blush);}
 .why-cell .num{font-family:'DM Mono',monospace;font-size:10px;color:var(--blush);letter-spacing:0.15em;margin-bottom:10px;}
 .why-cell h3{font-family:'Gowun Batang',serif;font-weight:700;font-size:16.5px;margin-bottom:8px;}
 .why-cell p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;}
+
+.room-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px;}
+.room-chip{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:9px 16px;font-family:'Gowun Batang',serif;font-weight:700;font-size:13.5px;
+}
+.room-chip .count{
+  font-family:'DM Mono',monospace;font-weight:500;font-size:10.5px;color:var(--kakao-text);
+  background:var(--kakao);padding:2px 8px;border-radius:9px;
+}
+.room-note{margin-top:20px;font-size:13px;color:var(--ink-soft);line-height:1.8;}
 
 /* ---- CHAT&MEET STRUCTURE ---- */
 .stack{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
@@ -289,6 +308,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;}
 <section class="hero">
   <div class="wrap">
     <div class="hero-eyebrow">사람과 사람을 연결합니다 - 꾸밋</div>
+    <div class="hero-axis"><b>Chat</b><span class="sep">·</span><b>Call</b><span class="sep">·</span><b>Meet</b></div>
     <h1>인생에서 단 한 사람을<br>만나는 것, <span class="hl">꾸밋</span>!</h1>
     <p class="hero-sub">내게 소중한 한 명을 찾아 드립니다. 한달에 한 사람, 먼저 채팅으로, 부담 없이.</p>
 
@@ -434,29 +454,60 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;}
 <!-- CHAT & MEET STRUCTURE -->
 <section style="background:var(--paper-2)">
   <div class="wrap">
-    <div class="eyebrow reveal">챗 &amp; 밋</div>
+    <div class="eyebrow reveal">CHAT · CALL · MEET</div>
     <h2 class="reveal">채팅이 기본,<br>만남은 자연스럽게</h2>
     <p class="lede reveal">억지로 밖에서 만나야 하는 서비스가 아니에요. 채팅에서 관계가 무르익으면, 그다음은 자연스럽게 따라옵니다.</p>
 
     <div class="flow-steps reveal">
       <div class="flow-step">
-        <div class="flow-num">01</div>
+        <div class="flow-num">CHAT</div>
         <div class="flow-title">호스트와 편하게 톡 시작</div>
         <div class="flow-desc">카카오톡 오픈채팅에서 호스트와 먼저 1:1로 대화해요. 부담 없이, 편하게.</div>
       </div>
       <div class="flow-arrow">↓</div>
       <div class="flow-step">
-        <div class="flow-num">02</div>
+        <div class="flow-num">CHAT</div>
         <div class="flow-title">관심사 맞는 분들과 소그룹</div>
         <div class="flow-desc">비슷한 관심사를 가진 분들과 호스트가 함께하는 작은 톡방에서 이야기를 나눠요.</div>
       </div>
       <div class="flow-arrow">↓ 마음이 맞으면, 자연스럽게</div>
       <div class="flow-step">
-        <div class="flow-num">03</div>
+        <div class="flow-num">CALL</div>
+        <div class="flow-title">음성으로 한 번 더</div>
+        <div class="flow-desc">텍스트보다 깊게, 오프라인보다 가볍게. 소그룹 음성 통화로 캐주얼하게 대화해요.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">MEET</div>
         <div class="flow-title">마음 맞으면 오프라인까지</div>
         <div class="flow-desc">채팅으로 충분히 알아간 뒤, 원할 때만 이어지는 실제 만남.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ACTIVE ROOMS -->
+<section style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="eyebrow reveal">지금 이 순간에도</div>
+    <h2 class="reveal" style="font-family:'Gowun Batang',serif;font-weight:700;font-size:26px;line-height:1.5;margin-bottom:8px;">이런 대화들이 오가고 있어요</h2>
+    <p class="reveal" style="font-size:14px;color:var(--ink-soft);margin-bottom:6px;">관심사별로 나뉜 톡방에서, 매일 새로운 이야기가 쌓입니다</p>
+
+    <div class="room-chips reveal">
+      <span class="room-chip">맛집카페<span class="count">6</span></span>
+      <span class="room-chip">비즈니스 · AI캐릭터챗<span class="count">5</span></span>
+      <span class="room-chip">음악 다방 DJ<span class="count">5</span></span>
+      <span class="room-chip">오운완 — 달리기·스피닝·헬스·등산·골프<span class="count">7</span></span>
+      <span class="room-chip">책읽기 1조<span class="count">5</span></span>
+      <span class="room-chip">남사친여사친 다같이 놀자<span class="count">8</span></span>
+      <span class="room-chip">마케팅&비즈니스 스터디<span class="count">10</span></span>
+      <span class="room-chip">도서관 독서 투어<span class="count">10</span></span>
+      <span class="room-chip">구인구직 · AI&IT 프로젝트<span class="count">17</span></span>
+      <span class="room-chip">인문철학 1조<span class="count">4</span></span>
+      <span class="room-chip">미국 여행·출장·한달살기<span class="count">7</span></span>
+    </div>
+
+    <p class="room-note reveal">가입하시면 관심사에 맞는 방부터 자연스럽게 안내해드려요. 마음 맞는 방이 없으면, 새로 만들어드릴게요.</p>
   </div>
 </section>
 
@@ -590,6 +641,14 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;}
           <span class="testimonial-gender f">♀</span>
           <span class="testimonial-no">188호</span>
           <span class="testimonial-meta">소이 · 꾸밋 시즌1</span>
+        </div>
+      </div>
+      <div class="testimonial-card gm reveal">
+        <div class="testimonial-quote">오호~ 드디어 만들었구먼 ㅋㅋ 다양하게 뻗어나가것는디? 대화상대라는게 무궁무진하니까능</div>
+        <div class="testimonial-author">
+          <span class="testimonial-gender m">♂</span>
+          <span class="testimonial-no">177호</span>
+          <span class="testimonial-meta">The+ · 꾸밋 시즌1</span>
         </div>
       </div>
     </div>
